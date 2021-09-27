@@ -1,9 +1,15 @@
 #include <gtest/gtest.h>
 #include <header.hpp>
 
+#ifdef _JSON_DIR
+#define JSON_DIR _JSON_DIR
+#endif
+
 TEST(ParseTest, TrueData) {
     EXPECT_TRUE(true);
-    string JSON_path = "..\\Students\\students.json";
+
+    string JSON_path = JSON_DIR;
+    JSON_path += "/students.json";
     string Tjson = ""
         "{\n"
         "  \"items\": [\n"
@@ -41,7 +47,8 @@ TEST(ParseTest, TrueData) {
 
 TEST(ParseTest, try_file)
 {
-  string JSON_path = "..\\Students\\student.json";
+  string JSON_path = JSON_DIR;
+  JSON_path += "/student.json";
   string er = "! The file cannot be found by this path:" + JSON_path;
   try {
     try_file(JSON_path);
@@ -53,7 +60,8 @@ TEST(ParseTest, try_file)
 }
 TEST(ParseTest, no_size)
 {
-  string JSON_path = "..\\Students\\test1.json";
+  string JSON_path = JSON_DIR;
+  JSON_path += "/test1.json";
   std::ifstream file{JSON_path};
   json data;
   file >> data;
@@ -67,7 +75,8 @@ TEST(ParseTest, no_size)
 }
 
 TEST(ParseTest, Test3) {
-  string JSON_path = "..\\Students\\test2.json";
+  string JSON_path = JSON_DIR;
+  JSON_path += "/test2.json";
   std::ifstream file{JSON_path};
   json data;
   file >> data;
@@ -91,8 +100,9 @@ TEST(Print, Test1) {
       " -------------------------------------------------------------------\n";
 
   std::stringstream StreamT;
-  string jsonPath = "..\\Students\\students.json";
-  json data = Parse(jsonPath);
+  string JSON_path = JSON_DIR;
+  JSON_path += "/students.json";
+  json data = Parse(JSON_path);
   Print(StreamT, data);
   EXPECT_EQ(Table, StreamT.str());
 }
