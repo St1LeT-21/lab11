@@ -6,9 +6,14 @@
 #include <fstream>
 #include <iomanip>
 #include <nlohmann/json.hpp>
+#include <string>
 
 using nlohmann::json;
-using namespace std;
+using std::cout;
+using std::string;
+using std::endl;
+using std::to_string;
+
 
 bool try_file(string jsonPath){
   bool nofile = false;
