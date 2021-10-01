@@ -77,7 +77,7 @@ void Print(std::ostream& stream, json data){
   for (int i = 0; i < t; i++) {
     if ( data["items"][i]["debt"] == "null" )
       stream << to_string(data["items"][i]["debt"]);
-    if ( int(data["items"][i]["debt"].size()) > 1 )
+    if ( data["items"][i]["debt"].size() > 1 )
       dbt = to_string(data["items"][i]["debt"].size()) + " items";
     else if ( data["items"][i].at("debt").is_null() )
       dbt = "null";
