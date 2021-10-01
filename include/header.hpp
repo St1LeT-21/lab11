@@ -65,12 +65,13 @@ void Print(std::ostream& stream, json data){
   string avg;
   string name;
   string group;
-  stream << " |" << std::setw( 20 )  <<  std::right  <<  "name"
-          << " |" << std::setw( 15 )  <<  std::right  <<  "group"
-          << " |" << std::setw( 8 )  <<  std::right  <<  "avg"
-          << " |" << std::setw( 15 )  <<  std::right  <<  "dbt"
+  stream << " |" << std::setw(20)  <<  std::right  <<  "name"
+          << " |" << std::setw(15)  <<  std::right  <<  "group"
+          << " |" << std::setw(8)  <<  std::right  <<  "avg"
+          << " |" << std::setw(15)  <<  std::right  <<  "dbt"
          <<  " |"  <<  endl;
-  stream << " -------------------------------------------------------------------"
+  stream << " ----------------------------"
+            "---------------------------------------"
           << endl;
   int t = data["items"].size();
   for (int i = 0; i < t; i++) {
@@ -85,10 +86,10 @@ void Print(std::ostream& stream, json data){
     name = data["items"][i].at("name").get<string>();
     group = data["items"][i].at("group").get<string>();
     avg = data["items"][i].at("avg").get<string>();
-    stream << " |" << std::setw( 20 )  <<  std::right  <<  name
-            << " |" << std::setw( 15 )  <<  std::right  <<  group
-            << " |" << std::setw( 8 )  <<  std::right  <<  avg
-            << " |" << std::setw( 15 )  <<  std::right  <<  dbt  <<  " |"
+    stream << " |" << std::setw(20)  <<  std::right  <<  name
+            << " |" << std::setw(15)  <<  std::right  <<  group
+            << " |" << std::setw(8)  <<  std::right  <<  avg
+            << " |" << std::setw(15)  <<  std::right  <<  dbt  <<  " |"
            <<  endl;
     stream << " --------------------------------"
               "-----------------------------------" << endl;
