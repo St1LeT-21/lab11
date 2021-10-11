@@ -32,7 +32,7 @@ hunter_add_package(nlohmann_json)
 find_package(nlohmann_json 3.2.0 REQUIRED)
 
 add_library(${PROJECT_NAME} STATIC
-  ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/sources/Students.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} nlohmann_json::nlohmann_json)
