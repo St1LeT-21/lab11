@@ -21,7 +21,6 @@ bool try_file(string jsonPath){
   return nofile;
 }
 
-
 bool no_size(json data){
   bool nosize = false;
   if ( data["items"].size() == 0 ) {
