@@ -9,7 +9,6 @@ using std::endl;
 using std::to_string;
 
 
-
 bool try_file(string jsonPath){
   bool nofile = false;
   std::ifstream file{jsonPath};
